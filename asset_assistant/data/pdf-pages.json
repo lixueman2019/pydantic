@@ -1,0 +1,182 @@
+[
+  {
+    "citation_id": "aeris_manual:c75c23200ea0:1:0",
+    "source_id": "aeris_manual",
+    "page": 1,
+    "title": "localhost:52721/#",
+    "section": null,
+    "excerpt": "Aeris 3.2 MW Turbine\nOperations & Maintenance Manual — Condition Monitoring Excerpt\nAeris Turbine Systems · Document ATS-OM-0342 · Revision G · Applies to Aeris 3.2 MW (A32-100 series) · Rated\noutput 3,200 kW\n1. Scope of this excerpt\nThis excerpt covers the condition-monitoring subset of the full O&M manual: alarm code definitions, sensor\nthreshold tables, scheduled inspection intervals, lubrication requirements, and fastener torque specifications for the\ndrivetrain.\nIt does not cover commissioning, blade repair, electrical safety isolation, or tower and foundation inspection. Those\nprocedures are in ATS-OM-0100 through ATS-OM-0339 and must be consulted before any physical intervention.\nThresholds in this document are manufacturer limits. They define what the equipment can tolerate. They do not\ndefine what an operator must do about an exceedance — dispatch decisions, response times and escalation belong\nto the operator's own performance standards, which take precedence where the two differ.\nRevision G note. The measurement-validity floor was lowered from 40% to 30% of rated output in Sections 3 and 4,\nfollowing field data showing that band-limited RMS velocity remains comparable down to 30% load on this platform.\nReadings between 30% and 40% load were previously discarded and are now valid for trending.",
+    "sha256": "c75c23200ea0c22d8a58af3eb316581a8bcdc43d94f16dc751dd0b562223fbb4",
+    "version": "Revision G"
+  },
+  {
+    "citation_id": "aeris_manual:c75c23200ea0:2:0",
+    "source_id": "aeris_manual",
+    "page": 2,
+    "title": "localhost:52721/#",
+    "section": null,
+    "excerpt": "2. Alarm code reference\nAlarm codes are grouped by subsystem. The severity column is the manufacturer's classification of equipment risk.\nCode Subsystem Description Severity\nA104 Rotor Rotor speed above rated for more than 60 s Warning\nA108 Rotor Blade pitch asymmetry beyond 1.5 degrees Warning\nA115 Rotor Pitch actuator response degraded Advisory\nA121 Rotor Rotor imbalance detected Warning\nA203 Gearbox Oil temperature above advisory threshold Advisory\nA206 Gearbox Oil temperature above alarm threshold Warning\nA209 Gearbox Oil particulate count above ISO limit Advisory\nA212 Gearbox Gearbox vibration above advisory threshold Advisory\nA214 Gearbox Gearbox vibration above action limit Warning\nA217 Gearbox Gearbox vibration above trip limit Critical\nA221 Gearbox Oil pressure below minimum Warning\nA228 Gearbox Filter differential pressure high Advisory\nA302 Generator Winding temperature above advisory threshold Advisory\nA305 Generator Winding temperature above alarm threshold Warning\nA311 Generator Bearing vibration above action limit Warning\nA318 Generator Slip ring wear indicator Advisory\nA404 Nacelle Yaw drive current imbalance Advisory\nA409 Nacelle Nacelle vibration above action limit Warning\nA413 Nacelle Anemometer disagreement between redundant units Advisory\nA421 Nacelle Converter cabinet temperature high Warning\nA430 Nacelle Emergency stop circuit open Critical\nReading the codes. An Advisory alarm does not stop the machine and does not by itself require intervention; it\nmarks a condition that should be trended. A Warning alarm indicates the component is operating outside its design\nenvelope and will accumulate damage if the condition persists. A Critical alarm commands an automatic controlled\nstop and latches until manually reset by a qualified technician.\nThe alarm c",
+    "sha256": "c75c23200ea0c22d8a58af3eb316581a8bcdc43d94f16dc751dd0b562223fbb4",
+    "version": "Revision G"
+  },
+  {
+    "citation_id": "aeris_manual:c75c23200ea0:2:1400",
+    "source_id": "aeris_manual",
+    "page": 2,
+    "title": "localhost:52721/#",
+    "section": null,
+    "excerpt": "des. An Advisory alarm does not stop the machine and does not by itself require intervention; it\nmarks a condition that should be trended. A Warning alarm indicates the component is operating outside its design\nenvelope and will accumulate damage if the condition persists. A Critical alarm commands an automatic controlled\nstop and latches until manually reset by a qualified technician.\nThe alarm code records where a measurement first crossed, not where it is now. The controller raises a code\nat the moment a threshold is crossed and holds that code while the condition persists; it does not re-code to a\nhigher alarm as the value continues to climb. A turbine still reporting A212 — vibration above advisory threshold\n— may by now be reading well above the action limit.",
+    "sha256": "c75c23200ea0c22d8a58af3eb316581a8bcdc43d94f16dc751dd0b562223fbb4",
+    "version": "Revision G"
+  },
+  {
+    "citation_id": "aeris_manual:c75c23200ea0:3:0",
+    "source_id": "aeris_manual",
+    "page": 3,
+    "title": "localhost:52721/#",
+    "section": null,
+    "excerpt": "Never infer the current severity of a condition from the alarm code alone. Read the measured value against the\nthreshold tables in Sections 3 and 4, and read the trend. The code tells you when the problem started; the\nmeasurement tells you how bad it has become.",
+    "sha256": "c75c23200ea0c22d8a58af3eb316581a8bcdc43d94f16dc751dd0b562223fbb4",
+    "version": "Revision G"
+  },
+  {
+    "citation_id": "aeris_manual:c75c23200ea0:4:0",
+    "source_id": "aeris_manual",
+    "page": 4,
+    "title": "localhost:52721/#",
+    "section": null,
+    "excerpt": "3. Vibration thresholds\nVibration is measured as RMS velocity in millimetres per second, band-limited 10–1000 Hz, sampled at the\naccelerometer mounted on each component's primary bearing housing.\nMeasurement validity. Readings are comparable against the limits below at any output at or above 30% of rated\n— that is, 960 kW or more on the 3,200 kW platform. Readings taken below 30% load are dominated by low-speed\nstructural modes, are not comparable, and must not be trended against these limits.\nComponent Advisory Action limit Trip limit Alarm code at action limit\nGearbox (high-speed shaft) 3.5 mm/s 4.5 mm/s 6.0 mm/s A214\nGearbox (intermediate shaft) 3.0 mm/s 4.0 mm/s 5.5 mm/s A214\nGenerator bearing (drive end) 2.8 mm/s 3.8 mm/s 5.0 mm/s A311\nGenerator bearing (non-drive end) 2.8 mm/s 3.8 mm/s 5.0 mm/s A311\nMain bearing 2.5 mm/s 3.5 mm/s 4.8 mm/s A121\nNacelle structural 4.0 mm/s 5.5 mm/s 8.0 mm/s A409\nThe gearbox action limit is 4.5 mm/s RMS. Sustained operation above this figure accelerates high-speed-shaft\nbearing wear and is the single most common precursor to gearbox replacement on this platform. Aeris Turbine\nSystems does not warrant gearbox life where the action limit has been exceeded for more than 30 cumulative days.\nTrending matters more than any single reading. A step change of more than 0.8 mm/s between consecutive\nweekly samples warrants investigation even when the absolute value remains below the action limit. A slow,\nmonotonic rise across several weeks is the characteristic signature of progressive bearing degradation and should be\ntreated as more serious than an isolated spike, which is more often a sensor or load artefact.\n4. Gearbox lubrication temperature thresholds\nOil temperature is measured in the gearbox sump. Readings are valid after 30 minutes of c",
+    "sha256": "c75c23200ea0c22d8a58af3eb316581a8bcdc43d94f16dc751dd0b562223fbb4",
+    "version": "Revision G"
+  },
+  {
+    "citation_id": "aeris_manual:c75c23200ea0:4:1400",
+    "source_id": "aeris_manual",
+    "page": 4,
+    "title": "localhost:52721/#",
+    "section": null,
+    "excerpt": "solute value remains below the action limit. A slow,\nmonotonic rise across several weeks is the characteristic signature of progressive bearing degradation and should be\ntreated as more serious than an isolated spike, which is more often a sensor or load artefact.\n4. Gearbox lubrication temperature thresholds\nOil temperature is measured in the gearbox sump. Readings are valid after 30 minutes of continuous operation at or\nabove 30% of rated output.\nCondition Temperature Alarm code Equipment effect\nNominal operating\nband\n55–70 °C — None\nDesign nominal 65 °C — Reference value\nAdvisory threshold 78 °C A203\nOil oxidation rate approximately\ndoubles\nAlarm threshold 82 °C A206\nAdditive package degrades; shortened\noil life\nTrip threshold 90 °C A206 plus controlled\nstop\nRisk of film breakdown and scuffing\nInterpreting temperature against load. Sump temperature rises with load, so a reading must always be assessed\nalongside power output. A gearbox running at 79 °C at full rated output is behaving differently from one running at",
+    "sha256": "c75c23200ea0c22d8a58af3eb316581a8bcdc43d94f16dc751dd0b562223fbb4",
+    "version": "Revision G"
+  },
+  {
+    "citation_id": "aeris_manual:c75c23200ea0:5:0",
+    "source_id": "aeris_manual",
+    "page": 5,
+    "title": "localhost:52721/#",
+    "section": null,
+    "excerpt": "79 °C at half load — the second indicates a developing loss of efficiency in the drivetrain, a lubrication fault, or a\ncooling circuit restriction, and should be investigated even though both readings sit at the same absolute value.\nWhere temperature rises over a period during which load has fallen, the divergence is itself the finding. Correlate\nit against the vibration trend for the same period: a rising temperature and a rising vibration on the same shaft, while\noutput declines, is the classic progressive-bearing-wear signature on this platform.",
+    "sha256": "c75c23200ea0c22d8a58af3eb316581a8bcdc43d94f16dc751dd0b562223fbb4",
+    "version": "Revision G"
+  },
+  {
+    "citation_id": "aeris_manual:c75c23200ea0:6:0",
+    "source_id": "aeris_manual",
+    "page": 6,
+    "title": "localhost:52721/#",
+    "section": null,
+    "excerpt": "5. Scheduled inspection intervals\nInterval Scope Downtime\n500 h Visual nacelle inspection, leak check, filter differential reading 2 h\n2,000 h Oil sample for laboratory analysis, torque audit of drivetrain fasteners 4 h\n6 months Borescope inspection of gearbox high-speed stage 6 h\n12 months Full drivetrain alignment check, brake pad measurement, yaw drive service 12 h\n24 months Oil change, filter replacement, accumulator recharge 16 h\n60 months Generator bearing replacement, slip ring service 40 h\nIntervals are whichever comes first — elapsed hours at rated operation, or calendar time. A turbine that has been\ncurtailed or offline for an extended period still requires its calendar-driven inspections on schedule.\n6. Lubrication schedule\nPoint Lubricant Quantity Interval\nGearbox sump ATS-Gear 320 synthetic (ISO VG 320) 380 L 24 months\nMain bearing ATS-Grease HT2 lithium complex 240 g 6 months\nGenerator bearings (each) ATS-Grease HT2 lithium complex 45 g 6 months\nYaw gear teeth ATS-Grease OG open gear compound 500 g 12 months\nPitch bearings (each) ATS-Grease HT2 lithium complex 120 g 12 months\nBlade bearing races ATS-Grease HT2 lithium complex 180 g 12 months\nDo not mix lubricant families. Where lubricant type is being changed, the system must be fully drained and flushed\nper procedure ATS-OM-0288.\n7. Drivetrain fastener torque specifications\nFastener Size Torque Notes\nGearbox-to-bedplate M36 2,400 Nm Tighten in diagonal sequence, two passes\nGearbox torque arm M30 1,450 Nm Verify bushing condition before torquing\nGenerator mounting M24 760 Nm Check alignment shims first\nCoupling flange M20 430 Nm Replace bolts at every coupling service\nMain shaft flange M42 3,900 Nm Hydraulic tensioner required\nYaw drive mounting M20 430 Nm —\nAll torque figures assume clean, lightly oiled t",
+    "sha256": "c75c23200ea0c22d8a58af3eb316581a8bcdc43d94f16dc751dd0b562223fbb4",
+    "version": "Revision G"
+  },
+  {
+    "citation_id": "aeris_manual:c75c23200ea0:6:1400",
+    "source_id": "aeris_manual",
+    "page": 6,
+    "title": "localhost:52721/#",
+    "section": null,
+    "excerpt": "edplate M36 2,400 Nm Tighten in diagonal sequence, two passes\nGearbox torque arm M30 1,450 Nm Verify bushing condition before torquing\nGenerator mounting M24 760 Nm Check alignment shims first\nCoupling flange M20 430 Nm Replace bolts at every coupling service\nMain shaft flange M42 3,900 Nm Hydraulic tensioner required\nYaw drive mounting M20 430 Nm —\nAll torque figures assume clean, lightly oiled threads at ambient temperature. Re-torque after the first 500 operating\nhours following any drivetrain intervention.",
+    "sha256": "c75c23200ea0c22d8a58af3eb316581a8bcdc43d94f16dc751dd0b562223fbb4",
+    "version": "Revision G"
+  },
+  {
+    "citation_id": "aeris_manual:c75c23200ea0:7:0",
+    "source_id": "aeris_manual",
+    "page": 7,
+    "title": "localhost:52721/#",
+    "section": null,
+    "excerpt": "8. Safety notices\nNever enter the nacelle while a Critical alarm is latched. The controller may attempt an automatic reset sequence\nthat energises the yaw and pitch drives without local warning.\nVibration and temperature sensors are condition indicators, not safety devices. They must not be relied upon as\nthe sole protection against drivetrain failure. Physical inspection at the scheduled intervals in Section 5 remains\nmandatory regardless of what the monitoring data shows.\nDo not reset a latched alarm to clear a display. Every reset is recorded, and an unexplained reset obstructs later\nfault diagnosis.\nAeris Turbine Systems · ATS-OM-0342 Rev G · This document is a training sample. The manufacturer, model, thresholds\nand part numbers are fictional and must not be applied to real equipment.",
+    "sha256": "c75c23200ea0c22d8a58af3eb316581a8bcdc43d94f16dc751dd0b562223fbb4",
+    "version": "Revision G"
+  },
+  {
+    "citation_id": "northgate_standards:4eafd6731d91:1:0",
+    "source_id": "northgate_standards",
+    "page": 1,
+    "title": "localhost:62502/#",
+    "section": null,
+    "excerpt": "Asset Performance & Dispatch Standards\nNorthgate Energy · Renewable Operations · Document NGE-OPS-014 · Revision 9 · Owner: Director, Fleet Operations\n1. Purpose\nThis standard defines how Northgate Energy responds to condition indicators across its wind fleet: what availability\nwe commit to, how we classify an alarm, how quickly a crew must be dispatched, and who is told when.\nIt is the operator-side counterpart to manufacturer documentation. Where a manufacturer manual states a limit, this\nstandard states the response. Read together they answer the two questions an operations analyst actually has: is this\nreading out of bounds, and what am I obliged to do about it.\nWhere a manufacturer specifies a stricter limit than this standard assumes, the manufacturer limit governs the\nequipment and this standard governs the response time.\n2. Availability commitments\nMeasure Target Measurement window\nFleet energy-based availability 97.0% Rolling 12 months\nPer-site availability 96.0% Rolling 12 months\nPer-asset availability floor 93.0% Rolling 12 months\nUnplanned outage rate Below 4 events per asset per year Calendar year\nMean time to dispatch (S2) Under 72 hours Rolling 90 days\nAvailability excludes grid-directed curtailment and force majeure. It does not exclude derates that result from a\ndeferred maintenance decision — a turbine held at reduced output because we chose not to dispatch counts against\navailability in full.",
+    "sha256": "4eafd6731d911175e0ff91e274d816c8f1362e8cc1ec3bd75d82bf42657f7df0",
+    "version": "Revision 9"
+  },
+  {
+    "citation_id": "northgate_standards:4eafd6731d91:1:1400",
+    "source_id": "northgate_standards",
+    "page": 1,
+    "title": "localhost:62502/#",
+    "section": null,
+    "excerpt": "unts against\navailability in full.",
+    "sha256": "4eafd6731d911175e0ff91e274d816c8f1362e8cc1ec3bd75d82bf42657f7df0",
+    "version": "Revision 9"
+  },
+  {
+    "citation_id": "northgate_standards:4eafd6731d91:2:0",
+    "source_id": "northgate_standards",
+    "page": 2,
+    "title": "localhost:62502/#",
+    "section": null,
+    "excerpt": "3. Alarm severity tiers\nEvery condition indicator is classified into one of four operator tiers. The tier is determined by the response required,\nwhich is not always the same as the manufacturer's equipment-risk severity.\nTelemetry systems report the operator tier. The severity  field returned by the asset telemetry platform carries\nthe S-tier below, not the manufacturer's Advisory / Warning / Critical classification. The two vocabularies are easily\nconfused: a manufacturer Advisory code can carry an operator tier of S2 when the measured value and its trend meet\nthe criteria in Section 4.\nTier Meaning Acknowledge\nwithin\nDispatch\nwithin\nOwner\nS1 Immediate safety or catastrophic-loss risk 15 minutes 8 hours Site Manager\nS2\nComponent operating beyond its action\nlimit; damage accumulating\n4 hours 72 hours\nReliability\nEngineer\nS3 Condition trending toward an action\nlimit; no damage yet\n1 business day Next\nscheduled visit\nReliability\nEngineer\nS4 Informational; log and trend only 5 business days None\nOperations\nAnalyst\n4. Crew dispatch criteria\nA crew is dispatched when any of the following is true. These criteria are the operative test — an alarm code alone\ndoes not compel a dispatch, and the absence of an alarm does not prevent one.\nS1 — dispatch within 8 hours\nAny manufacturer trip limit exceeded on any monitored component.\nAny Critical-severity manufacturer alarm latched.\nEmergency stop circuit open, or any condition preventing a controlled stop.\nVisible structural damage, oil release, or smoke reported by any source.\nS2 — dispatch within 72 hours\nA manufacturer action limit exceeded on any vibration or temperature channel.\nA monotonic rise in any vibration channel of more than 0.75 mm/s across any 60-day window, irrespective\nof whether the absolute action limit has been r",
+    "sha256": "4eafd6731d911175e0ff91e274d816c8f1362e8cc1ec3bd75d82bf42657f7df0",
+    "version": "Revision 9"
+  },
+  {
+    "citation_id": "northgate_standards:4eafd6731d91:2:1400",
+    "source_id": "northgate_standards",
+    "page": 2,
+    "title": "localhost:62502/#",
+    "section": null,
+    "excerpt": "y stop circuit open, or any condition preventing a controlled stop.\nVisible structural damage, oil release, or smoke reported by any source.\nS2 — dispatch within 72 hours\nA manufacturer action limit exceeded on any vibration or temperature channel.\nA monotonic rise in any vibration channel of more than 0.75 mm/s across any 60-day window, irrespective\nof whether the absolute action limit has been reached.\nGearbox oil temperature above the manufacturer advisory threshold while the turbine is operating\nbelow 60% of rated output. This combination indicates a developing drivetrain or cooling fault and is\ntreated as S2 even when the temperature remains below the alarm threshold.\nOil particulate count above the ISO limit on two consecutive laboratory samples.\nAny Warning-severity alarm that has recurred on more than three days in a rolling 14-day period.\nS3 — address at next scheduled visit\nAn action limit approached but not reached, with a stable trend.\nAny Advisory-severity alarm that has persisted for more than 14 days without a corresponding rise in the\nunderlying measurement.\nFilter differential pressure high with no accompanying temperature or vibration change.\nS4 — log only",
+    "sha256": "4eafd6731d911175e0ff91e274d816c8f1362e8cc1ec3bd75d82bf42657f7df0",
+    "version": "Revision 9"
+  },
+  {
+    "citation_id": "northgate_standards:4eafd6731d91:3:0",
+    "source_id": "northgate_standards",
+    "page": 3,
+    "title": "localhost:62502/#",
+    "section": null,
+    "excerpt": "Single-sample excursions that do not repeat.\nAnemometer disagreement without a corresponding power deviation.\nAny Advisory alarm cleared within 24 hours by normal operation.\nThe most common misclassification is treating a rising trend as S3 because the absolute number is still\nunder the limit. A channel climbing steadily toward an action limit is an S2 the moment the 60-day rise criterion is\nmet. Waiting for the threshold to be crossed forfeits the lead time that made the monitoring worth installing.",
+    "sha256": "4eafd6731d911175e0ff91e274d816c8f1362e8cc1ec3bd75d82bf42657f7df0",
+    "version": "Revision 9"
+  },
+  {
+    "citation_id": "northgate_standards:4eafd6731d91:4:0",
+    "source_id": "northgate_standards",
+    "page": 4,
+    "title": "localhost:62502/#",
+    "section": null,
+    "excerpt": "5. Derate and curtailment policy\nOperator-initiated derate. Where an S2 condition exists and a crew cannot reach the asset inside the 72-hour\nwindow, the Reliability Engineer may derate the turbine to hold the affected measurement below its action limit until\nthe visit. A derate decision must be logged with the expected duration and the measurement it is intended to control.\nGrid-directed curtailment. Curtailment instructed by the system operator is recorded separately and does not count\nagainst availability. A curtailed turbine is healthy — reduced or zero output under curtailment must never be\nreported as an outage, and any analysis of fleet performance must separate the two.\nReturn to service. A derated asset returns to full output only after the underlying condition is corrected and verified\nby a post-repair measurement at rated load, not immediately after the repair is completed.\n6. Escalation matrix\nTrigger Notified Timing\nAny S1 raised\nSite Manager, Director of Fleet\nOperations\nImmediately\nS2 unresolved past its dispatch window Reliability Engineer, Site Manager At window expiry\nS2 unresolved past 14 days Director of Fleet Operations Day 14\nGearbox action limit exceeded on any\nasset\nReliability Engineer, Asset Strategy Lead Within 1 business day\nAny asset below the availability floor Director of Fleet Operations,\nCommercial\nMonthly review\nWarranty-relevant exceedance Asset Strategy Lead, Legal\nWithin 5 business\ndays\nGearbox action-limit exceedances carry a standing notification to Asset Strategy because they are warranty-relevant\non most platforms in the fleet. The notification is required even when the operational response is only S2.\n7. Reporting cadence\nReport Frequency Audience\nAlarm summary by site Daily Operations Analysts\nOpen S1 and S2 register Weekly Rel",
+    "sha256": "4eafd6731d911175e0ff91e274d816c8f1362e8cc1ec3bd75d82bf42657f7df0",
+    "version": "Revision 9"
+  },
+  {
+    "citation_id": "northgate_standards:4eafd6731d91:4:1400",
+    "source_id": "northgate_standards",
+    "page": 4,
+    "title": "localhost:62502/#",
+    "section": null,
+    "excerpt": "et Strategy Lead, Legal\nWithin 5 business\ndays\nGearbox action-limit exceedances carry a standing notification to Asset Strategy because they are warranty-relevant\non most platforms in the fleet. The notification is required even when the operational response is only S2.\n7. Reporting cadence\nReport Frequency Audience\nAlarm summary by site Daily Operations Analysts\nOpen S1 and S2 register Weekly Reliability Engineering\nAvailability against target Monthly Fleet Operations leadership\nCondition-trend review by asset Quarterly Asset Strategy\nWarranty exposure summary Quarterly Asset Strategy, Legal\n8. Raising work\nWork orders are raised by the Reliability Engineer or the Operations Analyst who owns the finding — never\nautomatically from an alarm, and never by an assistant or automated system on its own initiative. Report the\ncondition and the tier it meets; the decision to open work, and its priority, belongs to a named person.",
+    "sha256": "4eafd6731d911175e0ff91e274d816c8f1362e8cc1ec3bd75d82bf42657f7df0",
+    "version": "Revision 9"
+  },
+  {
+    "citation_id": "northgate_standards:4eafd6731d91:5:0",
+    "source_id": "northgate_standards",
+    "page": 5,
+    "title": "localhost:62502/#",
+    "section": null,
+    "excerpt": "9. Definitions\nAction limit — the manufacturer-specified value above which a component accumulates damage. Distinct from the\ntrip limit, which commands a stop.\nSustained — present on every daily sample across the stated period. A measurement that drops below the limit on\nany day resets the count.\nMonotonic rise — a trend where each weekly average exceeds the previous, allowing one non-conforming week in\nany eight.\nRated output — the turbine nameplate rating. For the Aeris 3.2 platform this is 3,200 kW, so the 60% threshold\nreferenced in Section 4 is 1,920 kW.\nDispatch — a crew physically travelling to the asset. Remote diagnostics, parameter changes and resets are not\ndispatches and do not satisfy a dispatch window.\nNorthgate Energy · NGE-OPS-014 Rev 9 · This document is a training sample. The company, targets and thresholds are\nfictional.",
+    "sha256": "4eafd6731d911175e0ff91e274d816c8f1362e8cc1ec3bd75d82bf42657f7df0",
+    "version": "Revision 9"
+  }
+]

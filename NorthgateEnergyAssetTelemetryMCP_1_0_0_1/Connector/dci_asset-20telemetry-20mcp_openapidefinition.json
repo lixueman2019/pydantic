@@ -1,0 +1,29 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Asset Telemetry MCP",
+    "description": "Northgate Energy -- Asset Telemetry MCP.",
+    "version": "1.0.0"
+  },
+  "host": "placeholder.azure-apim.net",
+  "basePath": "/mcp",
+  "schemes": ["https"],
+  "consumes": ["application/json"],
+  "produces": ["application/json"],
+  "paths": {
+    "/": {
+      "post": {
+        "summary": "Asset Telemetry MCP Server",
+        "description": "MCP server for Northgate Energy. Tools: list_assets, get_asset_status, query_telemetry.",
+        "operationId": "InvokeMCP",
+        "x-ms-agentic-protocol": "mcp-streamable-1.0",
+        "parameters": [],
+        "responses": {
+          "200": { "description": "MCP response" }
+        }
+      }
+    }
+  },
+  "securityDefinitions": {},
+  "security": []
+}

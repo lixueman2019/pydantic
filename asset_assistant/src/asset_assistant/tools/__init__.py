@@ -1,0 +1,1 @@
+"""Allowlisted read-only local data and controlled computations."""

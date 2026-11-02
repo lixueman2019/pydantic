@@ -1,0 +1,33 @@
+# Local configuration and credentials (keep only the template).
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.pfx
+*.p12
+
+# Python environments and generated files.
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+build/
+dist/
+test-results/
+node_modules/
+
+# Local editor/agent state and unrelated Copilot Studio presentation material.
+.vscode/
+.azure/
+.github/
+MeridianMutualPolicyLookupMCP_1_0_0_1/
+NorthgateEnergyAssetTelemetryMCP_1_0_0_1/docs/
+Thumbs.db
+.DS_Store

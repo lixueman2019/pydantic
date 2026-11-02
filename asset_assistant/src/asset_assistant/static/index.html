@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'self'">
+  <title>资产证据助手 · Northgate Energy</title>
+  <link rel="icon" href="/static/vendor/icons/wind.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/vendor/pico-2.1.1.min.css">
+  <link rel="stylesheet" href="/static/styles.css">
+  <script type="module" src="/static/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#question">跳至调查问题</a>
+  <header class="topbar">
+    <nav aria-label="工作台">
+      <ul><li class="brand"><span class="brand-icon"><img src="/static/vendor/icons/wind.svg" alt="" width="26" height="26"></span><hgroup><h1>资产证据助手</h1><p>Northgate Energy <span aria-hidden="true">/</span> Cascade Ridge</p></hgroup></li></ul>
+      <ul class="badges"><li><span class="badge">Local</span></li><li><span class="badge"><img src="/static/vendor/icons/shield-check.svg" alt="" width="14" height="14">Read-only</span></li><li><span class="badge warning">Synthetic data</span></li><li><button id="theme-toggle" class="outline secondary icon-button" type="button" aria-label="切换深色主题"><img src="/static/vendor/icons/moon.svg" alt="" width="18" height="18"></button></li></ul>
+    </nav>
+  </header>
+  <main class="workspace">
+    <aside class="evidence-column" aria-labelledby="evidence-heading">
+      <div class="section-heading"><h2 id="evidence-heading"><img src="/static/vendor/icons/file-search.svg" alt="" width="20" height="20">调查证据</h2><span class="eyebrow">EVIDENCE</span></div>
+      <article class="context-card">
+        <small class="eyebrow">调查边界</small><h3>先核对来源，再形成结论。</h3>
+        <p>原始 PDF、合成遥测、只读工单。未核验内容不作为既定事实。</p>
+        <dl><dt>参考时钟 · UTC</dt><dd id="reference-date">待数据核验</dd><dt>资料状态</dt><dd id="data-status">待核验</dd></dl>
+      </article>
+      <section aria-labelledby="citations-heading"><div class="section-heading"><h3 id="citations-heading">来源与引用</h3><span id="citation-count" class="count">0</span></div>
+        <div id="citations"><p class="quiet empty-note">尚无已核验引用。实际检索后才显示页码和原文。</p></div>
+      </section>
+      <details id="tool-panel" class="tool-panel"><summary><img src="/static/vendor/icons/activity.svg" alt="" width="18" height="18">工具事件 <span id="tool-count" class="count">0</span></summary>
+        <p class="quiet">仅展示脱敏结果摘要、错误与重试，不展示模型私有思维链。</p><div id="tools"><p class="quiet empty-note">尚无工具调用记录。</p></div>
+      </details>
+      <p class="boundary-note"><img src="/static/vendor/icons/shield-check.svg" alt="" width="16" height="16">不创建、不修改、不调度工单。</p>
+    </aside>
+    <section class="chat-column" aria-labelledby="chat-heading">
+      <div class="section-heading chat-heading"><div><small class="eyebrow">ASSET INVESTIGATION</small><h2 id="chat-heading"><img src="/static/vendor/icons/messages-square.svg" alt="" width="22" height="22">资产调查对话</h2></div><button id="new-session" class="outline secondary compact" type="button"><img src="/static/vendor/icons/plus.svg" alt="" width="17" height="17">新会话</button></div>
+      <article class="status-card" aria-label="服务配置状态"><div><strong id="model-status">模型待配置 · 未验证</strong><p id="model-note">配置与真实探测分开显示；健康检查不会调用模型。</p></div><button id="check-health" class="outline secondary compact" type="button">检查状态</button></article>
+      <article id="error-panel" class="error-panel" role="alert" hidden><mark id="error-code"></mark><p id="error-message"></p><button id="dismiss-error" type="button" class="outline secondary compact">关闭提示</button></article>
+      <article class="conversation">
+        <header><span>证据驱动的只读调查</span><span id="run-status" class="badge neutral" role="status">尚未开始</span></header>
+        <section id="welcome" class="welcome" aria-labelledby="welcome-title"><span class="welcome-icon"><img src="/static/vendor/icons/file-search.svg" alt="" width="40" height="40"></span><small class="eyebrow">每一项结论，都应有据可查</small><h3 id="welcome-title">从一个资产问题开始</h3><p>核对资料，追踪工具调用，保留证据边界。<br>这里尚无模型回答，也没有预设分析结果。</p><div class="prompt-actions"><button class="outline secondary prompt" type="button" data-prompt="请核对 WTG-114 的振动、有效负载与文档证据，说明资料缺口。">核对 WTG-114 证据</button><button class="outline secondary prompt" type="button" data-prompt="请只读核对 WO-00001 的描述与 tasks 是否一致，并注明来源。">检查工单一致性</button><button class="outline secondary prompt" type="button" data-prompt="请按已核验参考日期分析最近 60 天温度与功率，报告数据窗口、有效样本与局限。">准备 60 天分析</button></div></section>
+        <div id="messages" role="log" aria-label="对话消息" aria-live="polite" aria-relevant="additions text"></div>
+        <form id="chat-form"><label for="question">调查问题</label><textarea id="question" name="message" rows="3" maxlength="8000" placeholder="例如：请核对 WTG-114 的振动与工单证据，并说明依据及缺口。" aria-describedby="question-hint validation-message" required></textarea><small id="question-hint">工单只读 · Ctrl / ⌘ + Enter 发送 · 凭据仅在后端配置</small><small id="validation-message" class="validation" hidden>请输入 1–8000 字的调查问题。</small><footer class="composer-footer"><span id="session-label" class="quiet">临时会话 · 刷新不保留浏览器记录</span><div><button id="stop" class="outline secondary compact" type="button" disabled><img src="/static/vendor/icons/square.svg" alt="" width="14" height="14">停止</button><button id="send" class="compact" type="submit"><img src="/static/vendor/icons/send.svg" alt="" width="17" height="17">发送调查</button></div></footer></form>
+      </article>
+      <section aria-labelledby="analysis-heading"><div class="section-heading"><h2 id="analysis-heading"><img src="/static/vendor/icons/chart-no-axes-combined.svg" alt="" width="20" height="20">分析与图表</h2><small>受控计算 · 非实时</small></div><div id="charts"><article class="analysis-empty"><img src="/static/vendor/icons/chart-no-axes-combined.svg" alt="" width="44" height="44"><div><h3>尚无计算结果</h3><p>仅在服务器返回受控图表后展示。不预填样本数、Pearson r 或示意数据曲线。</p></div></article></div></section>
+    </section>
+  </main>
+  <footer class="page-footer"><span>本地工作台 · 原生 JavaScript + Pico.css</span><span>本地运行 ≠ 离线推理 · 真实模型请求需网络与有效配置</span></footer>
+  <dialog id="reset-dialog" aria-labelledby="reset-heading"><article><header><h2 id="reset-heading">清空并开始新会话？</h2></header><p>当前对话、引用、工具事件和图表将被清空。不会更改任何工单或原始资料。</p><footer><button id="cancel-reset" class="secondary outline" type="button">保留当前会话</button><button id="confirm-reset" type="button">确认新会话</button></footer></article></dialog>
+  <noscript><p>此工作台需要 JavaScript 才能发送调查；未启用时不会执行任何请求。</p></noscript>
+</body>
+</html>

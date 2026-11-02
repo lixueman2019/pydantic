@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=75,<83"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "asset-assistant"
+version = "0.1.0"
+description = "Local read-only energy asset investigation assistant"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "fastapi>=0.115,<1", "uvicorn>=0.34,<1", "pydantic>=2.12,<3",
+  "pydantic-ai-slim[openai]==2.59.0", "azure-identity>=1.23,<2",
+  "python-dotenv>=1.0,<2",
+  "pypdf>=5,<7", "numpy>=2.2,<3", "pandas>=2.2,<4", "matplotlib>=3.10,<4",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.3,<10", "pytest-asyncio>=0.25,<2", "httpx>=0.28,<1", "ruff>=0.11,<1"]
+
+[project.scripts]
+asset-assistant = "asset_assistant.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+asset_assistant = ["static/**/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+
+[tool.ruff]
+target-version = "py312"
+line-length = 120
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F"]

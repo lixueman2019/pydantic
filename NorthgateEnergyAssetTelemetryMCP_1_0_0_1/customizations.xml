@@ -1,0 +1,31 @@
+<ImportExportXml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" OrganizationVersion="9.2.26054.129" OrganizationSchemaType="Standard" CRMServerServiceabilityVersion="9.2.26054.00132">
+  <Entities></Entities>
+  <Roles></Roles>
+  <Workflows></Workflows>
+  <FieldSecurityProfiles></FieldSecurityProfiles>
+  <Templates />
+  <EntityMaps />
+  <EntityRelationships />
+  <OrganizationSettings />
+  <optionsets />
+  <CustomControls />
+  <EntityDataProviders />
+  <Connectors>
+    <Connector>
+      <connectorid>e2b99d8d-ecd8-5742-b6e7-75ada2d1f3b9</connectorid>
+      <description>Northgate Energy -- Asset Telemetry MCP.</description>
+      <displayname>Asset Telemetry MCP</displayname>
+      <iconbrandcolor>#007ee5</iconbrandcolor>
+      <name>dci_asset-20telemetry-20mcp</name>
+      <connectortype>1</connectortype>
+      <scriptoperations>[]</scriptoperations>
+      <openapidefinition>/Connector/dci_asset-20telemetry-20mcp_openapidefinition.json</openapidefinition>
+      <connectionparameters>/Connector/dci_asset-20telemetry-20mcp_connectionparameters.json</connectionparameters>
+      <policytemplateinstances>/Connector/dci_asset-20telemetry-20mcp_policytemplateinstances.json</policytemplateinstances>
+      <customcodeblobcontent>/Connector/dci_asset-20telemetry-20mcp_customcodeblobcontent.csx</customcodeblobcontent>
+    </Connector>
+  </Connectors>
+  <Languages>
+    <Language>1033</Language>
+  </Languages>
+</ImportExportXml>

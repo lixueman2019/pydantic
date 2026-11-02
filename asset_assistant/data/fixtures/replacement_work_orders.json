@@ -1,0 +1,12 @@
+[
+  {
+    "id": "WO-00001",
+    "asset_id": "WTG-114",
+    "description": "Investigate gearbox vibration and temperature on WTG-114.",
+    "tasks": ["blade erosion inspection", "converter fan service", "anemometer recalibration"],
+    "category": "replacement_synthetic",
+    "source": "Locally authored acceptance fixture from approved requirements; original work-order source unavailable.",
+    "original_lab_reuse": false,
+    "status": "example_only"
+  }
+]

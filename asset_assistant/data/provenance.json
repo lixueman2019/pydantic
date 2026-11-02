@@ -1,0 +1,64 @@
+{
+  "sources": [
+    {
+      "source_id": "aeris_manual",
+      "path": "Aeris-3.2MW-Turbine-Maintenance-Manual-Excerpt.pdf",
+      "sha256": "c75c23200ea0c22d8a58af3eb316581a8bcdc43d94f16dc751dd0b562223fbb4",
+      "pages": 7,
+      "version": "Revision G",
+      "category": "lab_pdf",
+      "license_status": "unverified"
+    },
+    {
+      "source_id": "northgate_standards",
+      "path": "Northgate-Asset-Performance-and-Dispatch-Standards.pdf",
+      "sha256": "4eafd6731d911175e0ff91e274d816c8f1362e8cc1ec3bd75d82bf42657f7df0",
+      "pages": 5,
+      "version": "Revision 9",
+      "category": "lab_pdf",
+      "license_status": "unverified"
+    },
+    {
+      "source_id": "energy_connector",
+      "source_path": "NorthgateEnergyAssetTelemetryMCP_1_0_0_1/Connector/dci_asset-20telemetry-20mcp_customcodeblobcontent.csx",
+      "sha256": "7e9472c42a30e302d0827f18e7b03aa2ca9ab0fd3ad27ae406b48420a21e35ae",
+      "category": "original_synthetic",
+      "synthetic": true,
+      "reference_date": "2026-08-14",
+      "source_version": "1.0.0 (embedded connector metadata)",
+      "upstream_version_status": "unverified",
+      "license_status": "unverified",
+      "extraction": "complete C# verbatim JSON literals; no C# execution",
+      "coverage": [
+        "2026-05-17",
+        "2026-08-14"
+      ]
+    },
+    {
+      "source_id": "replacement_work_orders",
+      "path": "asset_assistant/data/fixtures/replacement_work_orders.json",
+      "sha256": "dafe5b99c94b63eec24dd6a471c64e4bbc2fa53f989a0205ecd97c4c37df01ef",
+      "category": "replacement_synthetic",
+      "original_lab_reuse": false,
+      "version": "local-1",
+      "license_status": "locally_authored"
+    }
+  ],
+  "effective_load_rule": {
+    "verified": true,
+    "minimum_kw": 960,
+    "comparator": ">=",
+    "sha256": "c75c23200ea0c22d8a58af3eb316581a8bcdc43d94f16dc751dd0b562223fbb4",
+    "citation_id": "aeris_manual:c75c23200ea0:4:0",
+    "page": 4,
+    "excerpt": "3. Vibration thresholds\nVibration is measured as RMS velocity in millimetres per second, band-limited 10–1000 Hz, sampled at the\naccelerometer mounted on each component's primary bearing housing.\nMeasurement validity. Readings are comparable against the limits below at any output at or above 30% of rated\n— that is, 960 kW or more on the 3,200 kW platform. Readings taken below 30% load are dominated by low-speed\nstructural modes, are not comparable, and must not be trended against these limits.\nComponent Advisory Action limit Trip limit Alarm code at action limit\nGearbox (high-speed shaft) 3.5 mm/s 4.5 mm/s 6.0 mm/s A214\nGearbox (intermediate shaft) 3.0 mm/s 4.0 mm/s 5.5 mm/s A214\nGenerator bearing (drive end) 2.8 mm/s 3.8 mm/s 5.0 mm/s A311\nGenerator bearing (non-drive end) 2.8 mm/s 3.8 mm/s 5.0 mm/s A311\nMain bearing 2.5 mm/s 3.5 mm/s 4.8 mm/s A121\nNacelle structural 4.0 mm/s 5.5 mm/s 8.0 mm/s A409\nThe gearbox action limit is 4.5 mm/s RMS. Sustained operation above this figure accelerates high-speed-shaft\nbearing wear and is the single most common precursor to gearbox replacement on this platform. Aeris Turbine\nSystems does not warrant gearbox life where the action limit has been exceeded for more than 30 cumulative days.\nTrending matters more than any single reading. A step change of more than 0.8 mm/s between consecutive\nweekly samples warrants investigation even when the absolute value remains below the action limit. A slow,\nmonotonic rise across several weeks is the characteristic signature of progressive bearing degradation and should be\ntreated as more serious than an isolated spike, which is more often a sensor or load artefact.\n4. Gearbox lubrication temperature thresholds\nOil temperature is measured in the gearbox sump. Readings are valid after 30 minutes of c",
+    "limitation": "Temperature additionally requires 30 min continuous valid load; fixture cannot verify duration."
+  },
+  "reference_date": "2026-08-14",
+  "assets": 18,
+  "telemetry_series": 90,
+  "telemetry_points": 2325,
+  "printed_page_numbers": "unknown; page means PDF page index, 1-based",
+  "upstream": "Connector comments reference microsoft/new-copilot-studio-tech-guide and troystaylor/SharingIsCaring; upstream data version/license not independently verified.",
+  "synthetic_training_only": true
+}

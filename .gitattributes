@@ -1,0 +1,4 @@
+# Preserve audited source bytes: provenance SHA-256 values depend on exact content.
+*.pdf -text
+NorthgateEnergyAssetTelemetryMCP_1_0_0_1/Connector/dci_asset-20telemetry-20mcp_customcodeblobcontent.csx -text -whitespace
+asset_assistant/data/fixtures/replacement_work_orders.json -text whitespace=cr-at-eol
